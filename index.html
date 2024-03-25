@@ -8,7 +8,18 @@
   </head>
   <body>
     <div id="app">
-      <h1>TypeScript Sandbox</h1>
+      <div id="contenedor-busqueda">
+        <input
+        type="text"
+        v-model="message"
+        placeholder="Introduzca IBAN"
+        id="IBAN"
+      />
+      <button id="boton-validar" type="submit">Validar</button>
+      </div>
+      <div id="contenedor-texto"></div>
+      </div>
+      
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
