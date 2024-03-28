@@ -1,28 +1,19 @@
 import "./style.css";
 
-import { IBAN, botonValidarIBAN } from "./iban.model";
-import {
-  mostrarSiEstaBienFormado,
-  crearTexto,
-  mostrarDigitoControl,
-  mostrarNombreBanco,
-  mostrarNumeroCuenta,
-  mostrarSiEsValido,
-  mostrarSucursal,
-} from "./iban.ui";
+import { botonExtraerHTML, htmlTexto, contenedorTexto } from "./model";
+import { crearTexto } from "./ui";
+import { extraerURLS } from "./motor";
 
 const handleBotonValidar = () => {
-  crearTexto();
-  if (IBAN && IBAN instanceof HTMLInputElement) {
-    mostrarSiEstaBienFormado(IBAN.value);
-    mostrarSiEsValido(IBAN.value);
-    mostrarNombreBanco(IBAN.value);
-    mostrarSucursal(IBAN.value);
-    mostrarDigitoControl(IBAN.value);
-    mostrarNumeroCuenta(IBAN.value);
+  if (contenedorTexto && contenedorTexto instanceof HTMLDivElement) {
+    contenedorTexto.innerHTML = "";
+  }
+  if (htmlTexto && htmlTexto instanceof HTMLTextAreaElement) {
+    const arrayURL = extraerURLS(htmlTexto.value);
+    crearTexto(arrayURL);
   }
 };
 
-if (botonValidarIBAN && botonValidarIBAN instanceof HTMLButtonElement) {
-  botonValidarIBAN.addEventListener("click", handleBotonValidar);
+if (botonExtraerHTML && botonExtraerHTML instanceof HTMLButtonElement) {
+  botonExtraerHTML.addEventListener("click", handleBotonValidar);
 }
