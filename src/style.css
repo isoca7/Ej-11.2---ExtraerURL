@@ -24,8 +24,12 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 50px;
   display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -36,12 +40,7 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+
 
 .logo {
   height: 6em;
@@ -67,7 +66,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding:0 10px 0 10px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -92,6 +91,17 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #02cf7a;
   }
+}
+
+#contenedor-busqueda{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+#contenedor-busqueda input {
+  width: 300px;
+  align-self: center;
+  height: 30px;
 }

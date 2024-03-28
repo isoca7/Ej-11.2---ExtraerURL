@@ -10,6 +10,10 @@ export interface listaBancos {
     numeroCuenta: number
   }
 
+export const IBAN = document.getElementById('IBAN')
+export const botonValidarIBAN = document.getElementById('boton-validar')
+  
+
 const listaBancos = `2080 Abanca Corporación Bancaria
 0061 Banca March
 0188 Banco Alcalá
